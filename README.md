@@ -2,13 +2,13 @@
 
 - app should start automatically, or use `npm run dev` from console
 
-- it's easier to view results if you use the 'Open in new tab' to get a full view - that's the arrow-square at right top, just above the narrow app view...
+- it's easier to view results if you use the 'Open in new tab' button, to get a full page view - that's the arrow-square small item at right top, just above the narrow app view...
 
 - things you can see from the dev app:
-    - the second card, sorking, showing 'Sanity Clientvar is here'
+    - the second card, working, showing 'Sanity Clientvar is here'
     - the first card, _not_ working, no env var showing
-    - open the console on the New Tab page, and you'll see the failure.
-    - note the dummy integration is indeed getting its env value, but only because we used loadEnv, with open prefix settings and dangers, and which crashes any client component which might import one of its values
+    - open the console on the New Tab page, and you'll see the failure of the component.
+    - note the dummy integration is indeed getting its env value, but only because we used loadEnv, and configured with open prefix settings and dangers (no others doc'd or accepted), and which crashes any client component which might import one of its values
     
 - things you can see by building
     - ctrl-c the dev run in the terminal, then run `npm run build`
