@@ -4,21 +4,29 @@ import 'html-escaper';
 import 'clsx';
 /* empty css                         */
 
-const $$Astro$2 = createAstro();
+const $$Astro$3 = createAstro();
 const $$Layout = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$Layout;
   const { title } = Astro2.props;
   return renderTemplate`<html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator"${addAttribute(Astro2.generator, "content")}><title>${title}</title>${renderHead()}</head> <body> ${renderSlot($$result, $$slots["default"])} </body></html>`;
 }, "/home/narration-sd/github-lerf2k-suvouc/src/layouts/Layout.astro", void 0);
 
-const $$Astro$1 = createAstro();
-const $$Card = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
-  Astro2.self = $$Card;
+const $$Astro$2 = createAstro();
+const $$BadCard = createComponent(async ($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
+  Astro2.self = $$BadCard;
   const { href, title, body } = Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<li class="link-card" data-astro-cid-dohjnao5> <a${addAttribute(href, "href")} data-astro-cid-dohjnao5> <h2 data-astro-cid-dohjnao5> ${title} <!-- <span>&rarr;</span> --> </h2> ${renderComponent($$result, "ShowClientEnv", null, { "client:only": "react", "client:component-hydration": "only", "data-astro-cid-dohjnao5": true, "client:component-path": "/home/narration-sd/github-lerf2k-suvouc/src/components/ShowClientEnv.tsx", "client:component-export": "ShowClientEnv" })} <p data-astro-cid-dohjnao5> ${body} </p> </a> </li> `;
-}, "/home/narration-sd/github-lerf2k-suvouc/src/components/Card.astro", void 0);
+  return renderTemplate`${maybeRenderHead()}<li class="link-card" data-astro-cid-ksnuhekv> <a${addAttribute(href, "href")} data-astro-cid-ksnuhekv> <h2 data-astro-cid-ksnuhekv> ${title} <span data-astro-cid-ksnuhekv>&rarr;</span> </h2> ${renderComponent($$result, "ShowLoadEnv", null, { "client:only": "react", "client:component-hydration": "only", "data-astro-cid-ksnuhekv": true, "client:component-path": "/home/narration-sd/github-lerf2k-suvouc/src/components/ShowLoadEnv.tsx", "client:component-export": "ShowLoadEnv" })} <p data-astro-cid-ksnuhekv> ${body} </p> </a> </li> `;
+}, "/home/narration-sd/github-lerf2k-suvouc/src/components/BadCard.astro", void 0);
+
+const $$Astro$1 = createAstro();
+const $$GoodCard = createComponent(async ($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+  Astro2.self = $$GoodCard;
+  const { href, title, body } = Astro2.props;
+  return renderTemplate`${maybeRenderHead()}<li class="link-card" data-astro-cid-w42bhqlq> <a${addAttribute(href, "href")} data-astro-cid-w42bhqlq> <h2 data-astro-cid-w42bhqlq> ${title} <span data-astro-cid-w42bhqlq>&rarr;</span> </h2> ${renderComponent($$result, "ShowClientEnv", null, { "client:only": "react", "client:component-hydration": "only", "data-astro-cid-w42bhqlq": true, "client:component-path": "/home/narration-sd/github-lerf2k-suvouc/src/components/ShowClientEnv", "client:component-export": "ShowClientEnv" })} <p data-astro-cid-w42bhqlq> ${body} </p> </a> </li> `;
+}, "/home/narration-sd/github-lerf2k-suvouc/src/components/GoodCard.astro", void 0);
 
 const $$Astro = createAstro();
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
@@ -29,9 +37,8 @@ const $$Index = createComponent(async ($$result, $$props, $$slots) => {
 			To get started this time, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
 		</p>
-		--> <ul role="list" class="link-card-grid" data-astro-cid-j7pv25f6> ${renderComponent($$result2, "Card", $$Card, { "href": "https://docs.astro.build/", "title": "Env Test/s", "body": "Learn how Astro doesn't work", "data-astro-cid-j7pv25f6": true })} </ul> </main> ` })} `;
+		--> <ul role="list" class="link-card-grid" data-astro-cid-j7pv25f6> ${renderComponent($$result2, "BadCard", $$BadCard, { "href": "https://docs.astro.build/", "title": "Env Test loadEnv", "body": "Learn how Astro doesn't work", "data-astro-cid-j7pv25f6": true })} ${renderComponent($$result2, "GoodCard", $$GoodCard, { "href": "https://docs.astro.build/", "title": "Env Test import.meta.env", "body": "Learn how Astro does work", "data-astro-cid-j7pv25f6": true })} </ul> </main> ` })} `;
 }, "/home/narration-sd/github-lerf2k-suvouc/src/pages/index.astro", void 0);
-
 const $$file = "/home/narration-sd/github-lerf2k-suvouc/src/pages/index.astro";
 const $$url = "";
 

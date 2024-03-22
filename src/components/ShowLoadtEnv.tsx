@@ -1,9 +1,6 @@
-import { clientEnv } from "../../astro.config"
+import { appVar } from "../../astro.config"
 export  const ShowClientEnv = (props) => {
-    
-    // const clientEnv = 'not yet'
-
     return (
-        <h2>Client Env: {clientEnv}</h2>
+        <h2>App Env: {appVar}</h2>
     )
 }
