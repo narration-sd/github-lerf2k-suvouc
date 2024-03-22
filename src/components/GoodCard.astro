@@ -1,4 +1,6 @@
 ---
+import { ShowClientEnv } from './ShowClientEnv'
+
 interface Props {
 	title: string;
 	body: string;
@@ -14,6 +16,7 @@ const { href, title, body } = Astro.props;
 			{title}
 			<span>&rarr;</span>
 		</h2>
+		<ShowClientEnv client:only="react"/>
 		<p>
 			{body}
 		</p>
