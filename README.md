@@ -1,54 +1,16 @@
-# Astro Starter Kit: Basics
+# compact demo for Astro 4.5 bug report
 
-```sh
-npm create astro@latest -- --template basics
-```
+- app should start automatically, or use `npm run dev` from console
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+- it's easier to view results if you use the 'Open in new tab' to get a full view - that's the arrow-square at right top, just above the narrow app view...
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- things you can see from the dev app:
+    - the second card, sorking, showing 'Sanity Clientvar is here'
+    - the first card, _not_ working, no env var showing
+    - open the console on the New Tab page, and you'll see the failure.
+    - note the dummy integration is indeed getting its env value, but only because we used loadEnv, with open prefix settings and dangers, and which crashes any client component which might import one of its values
+    
+- things you can see by building
+    - ctrl-c the dev run in the terminal, then run `npm run build`
+    - this will crash, with a short version of the export-import loadEnv vars problem: Vite/Rollup is entirely confused and trying to use a client module as if it's a server module. This gets explosively larger on a real app, but same problem
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
